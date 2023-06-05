@@ -1,0 +1,32 @@
+﻿@model EntityLayer.Concreate.Testimonial
+@{
+    ViewData["Title"] = "AddTestimonial";
+    Layout = "~/Views/Shared/_NewAdimLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3>
+        Yorum  Güncelleme Sayfası
+    </h3>
+</div>
+@using (Html.BeginForm("EditTestimonial", "TestimonailController1", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.Testimonialid)
+    <br />
+    @Html.Label("Adı")
+    @Html.TextBoxFor(x=>x.ClientName,new{@class="form-control"})
+    <br />
+    <label>Şirketi</label>
+    @Html.TextBoxFor(x=>x.Company,new{@class="form-control"})
+    <br />
+    <label>Yourumu</label>
+    @Html.TextBoxFor(x=>x.Comment,new{@class="form-control"})
+    <br />
+    <label>Ünvanı</label>
+    @Html.TextBoxFor(x=>x.Title,new{@class="form-control"})
+    <br />
+
+    <button class="btn btn-success">Güncelle</button>
+}
+
+

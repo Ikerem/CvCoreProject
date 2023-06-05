@@ -1,0 +1,44 @@
+﻿@model EntityLayer.Concreate.Portfolio
+@{
+    ViewData["Title"] = "AddPortfolio";
+    Layout = "~/Views/Shared/_NewAdimLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3>
+        Proje Ekleme Sayfası
+    </h3>
+</div>
+@using (Html.BeginForm("AddPortfolio", "PortfolioController1", FormMethod.Post))
+{
+
+    <br />
+    @Html.Label("Proje Başlığı")
+    @Html.TextBoxFor(x=>x.Name,new{@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.Name)
+    <br />
+    <label>Görsel 1</label>
+    @Html.TextBoxFor(x=>x.ImgUrl,new{@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.ImgUrl)
+    <br />
+    <label>Görsel 2</label>
+    @Html.TextBoxFor(x=>x.ImgUrl2,new{@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.ImgUrl2)
+    <br />
+    <label>Proje Url</label>
+    @Html.TextBoxFor(x=>x.ProjecUrl,new{@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.ProjecUrl)
+    <label>Fiyat</label>
+    <br />
+    @Html.TextBoxFor(x=>x.Price,new{@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.Price)
+    <br />
+    <label>Tamamlanma Oranı</label>
+    @Html.TextBoxFor(x=>x.Values,new{@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.Values)
+    <br />
+    
+    <button class="btn btn-success">Kaydet</button>
+}
+
+

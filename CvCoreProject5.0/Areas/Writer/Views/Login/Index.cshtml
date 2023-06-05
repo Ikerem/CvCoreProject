@@ -1,0 +1,61 @@
+﻿@model  CvCoreProject5._0.Areas.Writer.Models.UserLoginViewModel
+@{
+    Layout = null;
+}
+
+
+<html lang="en">
+
+<head>
+@*    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">*@
+    <title>Yazar Giriş</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="~/Form--main/index.css">
+   
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+
+    <!-- endinject -->
+
+</head>
+
+<body>
+    
+    <section>
+        <div class="form-box">
+            <div class="form-value">
+                <form class="pt-3" method="post">
+                    <h2>Giriş</h2>
+                    <div class="inputbox">
+
+                        <input type="text" asp-for="UserName" name="UserName" class="form-control" />
+                        <label for="">Kullanıcı Adı</label>
+                    </div>
+                    <div class="inputbox">
+                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <input type="password" id="exampleInputPassword1" name="Password">
+                        <label for="">Password</label>
+                    </div>
+                    <div class="forget">
+                        <label for=""><input type="checkbox">Remember Me  <a href="#">Şifremi Unuttum</a></label>
+
+                    </div>
+                    <button>Log in</button>
+                    <div class="register">
+                        <p>Hesabın Yokmu? <a href="#">Oluştur</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  
+</body>
+
+</html>
+

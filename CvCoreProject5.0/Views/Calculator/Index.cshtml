@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="~/views/calculator/styles.css">
+   
+</head>
+<body>
+    <h2>@ViewData["Title"]</h2>
+
+    <form asp-controller="Calculator" asp-action="Index" method="post" class="calculator-form">
+        <div class="form-group">
+            <label for="num1">Number 1:</label>
+            <input type="number" class="form-control" id="num1" name="num1" required>
+        </div>
+        <div class="form-group">
+            <label for="num2">Number 2:</label>
+            <input type="number" class="form-control" id="num2" name="num2" required>
+        </div>
+        <div class="form-group">
+            <label for="operation">Operation:</label>
+            <select class="form-control" id="operation" name="operation" required>
+                <option value="add">Add</option>
+                <option value="subtract">Subtract</option>
+                <option value="multiply">Multiply</option>
+                <option value="divide">Divide</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Calculate</button>
+    </form>
+
+    @if (ViewBag.Result != null)
+    {
+        <h3 class="result-text">Result: @ViewBag.Result</h3>
+    }
+</body>
+</html>
+
+

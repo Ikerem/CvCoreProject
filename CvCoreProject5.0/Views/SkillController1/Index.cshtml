@@ -1,0 +1,64 @@
+﻿@using EntityLayer.Concreate
+@model List<Skill>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdimLayout.cshtml";
+}
+
+<div class="row">
+
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Yetenek Tablosu</h4>
+             
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th> # </th>
+                                <th> Başlık </th>
+                                <th> Oran </th>
+                                <th> Sil </th>
+                                <th> Düzenle </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                
+                            
+                           
+                            <tr>
+                                <td> @item.Skilid </td>
+                                <td> @item.Title </td>
+                                <td>
+                                    <div class="progress">
+                                            <div class="progress-bar bg-danger" role="progressbar" style="width: @item.Value%" aria-valuenow="@item.Value" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </td>
+                               
+                                    <td>
+                                        <a href="/SkillController1/DeleteSkill/@item.Skilid" class="btn btn-inverse-danger btn-fw">Sil</a>
+                                    </td>
+                                    <th>
+                                        <a href="/SkillController1/EditSkill/@item.Skilid" class="btn btn-info">Güncelle</a>
+                                    </th>
+                            </tr>
+                            }
+                           
+                        </tbody>
+                    </table>
+                    <br />
+    <a href="/SkillController1/AddSkill" class="btn btn-warning ">Yeni Yetenek Ekle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+              

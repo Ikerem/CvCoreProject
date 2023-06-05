@@ -1,0 +1,28 @@
+﻿@model EntityLayer.Concreate.Contect
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdimLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("Index", "ContecSubPlaceController1", FormMethod.Post))
+{
+    
+    @Html.TextBoxFor(x=>x.Contectid,new{@class="form-control"})
+    <br />
+    <label>Açıklama</label>
+    @Html.TextAreaFor(x=>x.Title,10,3,new{@class="form-control"})
+    <br />
+    <label>Açıklama</label>
+    @Html.TextBoxFor(x=>x.Description,new{@class="form-control"})
+    <br />
+    <label>Mail</label>
+    @Html.TextBoxFor(x=>x.Mail,new{@class="form-control"})
+    <br />
+    <label>Telefon</label>
+    @Html.TextBoxFor(x=>x.PhoneNunber,new{@class="form-control"})
+    <br />
+    <button class="btn btn-outline-success btn-lg btn-block">Güncelle</button>
+    
+}
+

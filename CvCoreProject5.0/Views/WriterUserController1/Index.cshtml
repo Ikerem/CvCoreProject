@@ -1,0 +1,48 @@
+﻿@using EntityLayer.Concreate
+@model List<WriteUser>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdimLayout.cshtml";
+}
+
+<div class="col-md-6">
+    <div class="p-2">
+        <button type="button" id="getLisall" class="btn btn-outline-primary">Verileri Getir</button>
+        <button type="button" id="AddUser" class="btn btn-outline-info">Kaydet</button>
+    </div>
+</div>
+<h4 class=" text-center">Yazar Listesi</h4>
+<div class="p-2" id="ListUser">Veriler Buraya Gelicek</div>
+<br />
+<div class="col-md-12">
+    <input type="text" class="form-control" id="inpName"placeholder="Ad"/>
+    <br />
+    <input type="text" class="form-control" id="inpSurname" placeholder="SoyAd" />
+    <br />
+    <input type="text" class="form-control" id="inpSername" placeholder="Kullanıcı Adınız" />
+    <br />
+    <input type="text" class="form-control" id="inpMail" placeholder="Mail Adresiniz" />
+    <br />
+</div>
+@section scripts
+    {
+    <script>
+        $("#getLisall").click(function () {
+            $.ajax({
+                contentType: "application/json",
+                dataType: "json",
+                type: "Get",
+               
+
+                url: "/WriterUserController1/ListUser/",
+
+                succsess: function (funk) {
+                    let users = jQery.parseJSON(funk);
+                    console.log(users);
+                }
+            });
+        });
+    </script>
+}
+
+<script src="~/lib/jquery/dist/jquery.js"></script>

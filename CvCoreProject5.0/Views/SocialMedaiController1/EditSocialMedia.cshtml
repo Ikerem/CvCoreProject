@@ -1,0 +1,24 @@
+﻿@model EntityLayer.Concreate.SocialMedia
+@{
+    ViewData["Title"] = "EditSocialMedia";
+    Layout = "~/Views/Shared/_NewAdimLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("EditExperince", "SocialMedaiController1 ", FormMethod.Post))
+{
+   
+
+    @Html.Label("Sosyal Medya Platform Adı")
+    @Html.TextBoxFor(x=>x.Name,new{@class="form-control"})
+    <br />
+    <label>url </label>
+    @Html.TextBoxFor(x=>x.Url,new{@class="form-control"})
+    <br />
+    <label>Resim</label>
+    @Html.TextBoxFor(x=>x.Icone,new{@class="form-control"})
+    <br />
+   
+    <button class="btn btn-outline-success">Güncelle </button>
+}
+

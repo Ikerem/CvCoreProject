@@ -1,0 +1,54 @@
+﻿@using EntityLayer.Concreate
+@model List<Experince>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdimLayout.cshtml";
+}
+
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Deneyimler</h4>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Çalıştığım yer</th>
+                            <th>Görev Tanımı</th>
+                            <th>Resim</th>
+                            <th>Sil</th>
+                            <th>Güncelle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+
+
+                            <tr>
+                                <td>@item.Experinceid</td>
+                                <td>@item.Name</td>
+                                <td>@item.Date</td>
+                                <td>@item.ImgUrl</td>
+                             @*   <td>@item.Description</td>*@
+                          
+                            <td>
+                                    <a href="/ExperinceController1/DeleteExperince/@item.Experinceid" class="btn btn-outline-danger"> Sil </a>
+                            </td>
+                        <td>
+                                    <a href="/ExperinceController1/EditExperince/@item.Experinceid" class="btn btn-outline-success"> Güncelle </a>
+                        </td>
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+                <a href="/ExperinceController1/AddExperince" class="btn btn-outline-info">Yeni Deneyim Ekle </a>
+            </div>
+        </div>
+    </div>
+</div>
+

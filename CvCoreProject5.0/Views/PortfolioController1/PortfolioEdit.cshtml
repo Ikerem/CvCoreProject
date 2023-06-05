@@ -1,0 +1,38 @@
+﻿@model EntityLayer.Concreate.Portfolio
+@{
+    ViewData["Title"] = "PortfolioEdit";
+    Layout = "~/Views/Shared/_NewAdimLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3>
+        Proje Güncelleme Sayfası
+    </h3>
+</div>
+@using (Html.BeginForm("PortfolioEdit", "PortfolioController1", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.Portfolioid)
+    <br />
+    @Html.Label("Proje Başlığı")
+    @Html.TextBoxFor(x=>x.Name,new{@class="form-control"})
+  
+    <br />
+    <label>Değer</label>
+    @Html.TextBoxFor(x=>x.Values,new{@class="form-control"})
+ 
+    <br />
+    <label>Price</label>
+    @Html.TextBoxFor(x=>x.Price,new{@class="form-control"})
+    
+    <br />
+   
+    <label>Proje Platformu</label>
+    @Html.TextBoxFor(x=>x.Platform,new{@class="form-control"})
+  
+    <br />
+    <label>Resim</label>
+    @Html.TextBoxFor(x=>x.ImgUrl,new{@class="form-control"})
+   
+    <br />
+    <button class="btn btn-outline-success">Güncelle</button>
+}

@@ -1,0 +1,56 @@
+﻿@using EntityLayer.Concreate
+@model List<Service>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdimLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Hizmetlerim Listesi Tablosu </h3>
+</div>
+<!-- Light table -->
+<div class="table-responsive">
+    <table class="table align-items-center table-flush">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col" class="sort" data-sort="name">Id</th>
+                <th scope="col" class="sort" data-sort="budget">Başlık</th>
+                <th scope="col" class="sort" data-sort="status">Resim</th>
+                <th scope="col">Sil</th>
+                <th scope="col" class="sort" data-sort="completion">Düzenle</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody class="list">
+            @foreach (var item in Model)
+            {
+
+
+                <tr>
+                    <th>
+                        @item.Serviceid
+                    </th>
+                    <th class="budget">
+                        @item.Title
+                    </th>
+
+
+                    <th>
+                        @item.ImgUrl
+                    </th>
+                    <th>
+                        <a href="/ServiceController1/DeleteService/@item.Serviceid" class="btn btn-outline-danger">Sil</a>
+                    </th>
+                    <th>
+                        <a href="/ServiceController1/EditService/@item.Serviceid" class="btn btn-outline-success">Güncelle</a>
+                    </th>
+
+                </tr>
+            }
+
+        </tbody>
+    </table>
+
+    <a href="/ServiceController1/AddService" class="btn btn-outline-info">Hizmet Ekle</a>
+</div>
+

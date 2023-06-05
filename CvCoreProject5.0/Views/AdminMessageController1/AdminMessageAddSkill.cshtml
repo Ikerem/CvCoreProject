@@ -1,0 +1,26 @@
+﻿@model EntityLayer.Concreate.WriterMessage
+@{
+    ViewData["Title"] = "AdminMessageAddSkill";
+    Layout = "~/Views/Shared/_NewAdimLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("AdminMessageAddSkill", "AdminMessageController1", FormMethod.Post))
+{
+
+    <br />
+    @Html.Label("Konu Başlığı")
+    @Html.TextBoxFor(x=>x.Subject,new{@class="form-control"})
+    <br />
+    <label>Alıcı</label>
+    @Html.TextBoxFor(x=>x.Sender,new{@class="form-control"})
+    <br />
+    <label>Mesaj</label>
+    @Html.TextAreaFor(x=>x.MessageContent,8,3,new{@class="form-control"})
+    <br />
+
+    <button type="submit" class="btn btn-outline-success">Gönder</button>
+    <button  class="btn btn-delete">Sil</button>
+}
+
+

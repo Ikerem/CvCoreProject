@@ -1,0 +1,25 @@
+﻿@model EntityLayer.Concreate.Service
+
+@{
+    ViewData["Title"] = "AddService";
+    Layout = "~/Views/Shared/_NewAdimLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3>
+       Hizmet Ekleme Sayfası
+    </h3>
+</div>
+@using (Html.BeginForm("AddService", "ServiceController1", FormMethod.Post))
+{
+
+    <br />
+    @Html.Label("Hizmetler Başlığı")
+    @Html.TextBoxFor(x=>x.Title,new{@class="form-control"})
+    <br />
+    <label>Resim</label>
+    @Html.TextBoxFor(x=>x.ImgUrl,new{@class="form-control"})
+    <br /> 
+    <button class="btn btn-success">Kaydet</button>
+}
+
